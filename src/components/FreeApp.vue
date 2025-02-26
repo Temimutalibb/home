@@ -96,12 +96,6 @@ import rokonote from '@/assets/img/rokonote.png'
   opacity: 0;
 }
 
-.freeapp a:hover {
-  background-color: brown;
-  padding: 15px;
-  width: 30rem;
-}
-
 .freeapptext {
   background: linear-gradient(45deg, black, blue);
   -webkit-background-clip: text;
@@ -112,6 +106,7 @@ import rokonote from '@/assets/img/rokonote.png'
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-left: 1rem;
   text-align: center;
+  display: block;
 }
 
 .freeappdescription {
@@ -132,6 +127,9 @@ import rokonote from '@/assets/img/rokonote.png'
   animation-fill-mode: forwards;
   animation-delay: 6s;
   opacity: 0;
+  background-color: blanchedalmond;
+  display: block;
+  width: 100%;
 }
 @keyframes slideInFromRight {
   from {

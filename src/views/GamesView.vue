@@ -6,38 +6,33 @@ import TopHeader from '@/components/TopHeader.vue'
   <div class="container">
     <TopHeader />
     <div class="cover">
-      <router-link to="/games">
-        <div class="smallbox">
+      <router-link to="/palindrome" class="smallbox">
+        <div>
+          <div class="smallboxtext">Palindrome</div>
+        </div>
+      </router-link>
+      <router-link to="/games" class="smallbox">
+        <div>
           <div class="smallboxtext"></div>
         </div>
       </router-link>
-      <router-link to="/games">
-        <div class="smallbox">
+      <router-link to="/games" class="smallbox">
+        <div>
           <div class="smallboxtext"></div>
         </div>
       </router-link>
-      <router-link to="/games">
-        <div class="smallbox">
+      <router-link to="/games" class="smallbox">
+        <div>
           <div class="smallboxtext"></div>
         </div>
       </router-link>
-      <router-link to="/games">
-        <div class="smallbox">
+      <router-link to="/games" class="smallbox">
+        <div>
           <div class="smallboxtext"></div>
         </div>
       </router-link>
-      <router-link to="/games">
-        <div class="smallbox">
-          <div class="smallboxtext"></div>
-        </div>
-      </router-link>
-      <router-link to="/games">
-        <div class="smallbox">
-          <div class="smallboxtext"></div>
-        </div>
-      </router-link>
-      <router-link to="/games">
-        <div class="smallbox">
+      <router-link to="/games" class="smallbox">
+        <div>
           <div class="smallboxtext"></div>
         </div>
       </router-link>
@@ -61,7 +56,7 @@ import TopHeader from '@/components/TopHeader.vue'
   padding: 1rem;
 }
 .smallbox {
-  width: 22rem;
+  width: 30%;
   padding: 10px;
   height: 16.5rem;
   background-color: rgb(0, 0, 0);

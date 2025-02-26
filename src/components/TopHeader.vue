@@ -1,8 +1,7 @@
 <template>
-  <router-link to="/"></router-link>
-  <div>
+  <router-link to="/">
     <div class="welcometext">Mutalibb</div>
-  </div>
+  </router-link>
 </template>
 
 <style>

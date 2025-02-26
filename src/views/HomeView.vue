@@ -148,8 +148,8 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
         <div class="smallbox">
           <div class="smallboxtext">Make money</div>
           <div class="innertext">
-            We are team of developers building projetct and giving each other ideas, most
-            importantly making money
+            We are a team of developers building projects, sharing ideas, and most importantly,
+            making money
           </div>
           <a class="request" href="mailto:temitopking@icloud.com" target="_blank"
             >Request to join</a
@@ -301,6 +301,7 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
+  margin: auto;
   animation: slideInFromRight 1s ease-out;
   animation-delay: 5s;
   opacity: 0;

@@ -1,8 +1,8 @@
 <template>
   <div class="cover">
     <a href="https://dev.to/mutalibb" target="_blank">
-      <img src="@/assets/bottomimg/dev.png" alt="Image" class="image"
-    /></a>
+      <img src="@/assets/bottomimg/dev.png" alt="Image" class="image"/>
+    </a>
     <a href="#"> <img src="@/assets/bottomimg/facebook.jpg" alt="Image" class="image" /></a>
     <a href="https://github.com/temimutalibb" target="_blank">
       <img src="@/assets/bottomimg/github.jpg" alt="Image" class="image"

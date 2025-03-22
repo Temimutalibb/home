@@ -74,24 +74,26 @@ import QuoteButton from './QuoteButton.vue'
 
 <style scoped>
 .cover {
-  position: absolute;
-  width: 100%;
-  overflow-x: scroll;
-  top: 9rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 2rem 0;
 }
 .smallboxbody {
   display: flex;
   align-items: center;
   margin-right: 30px;
+  overflow-x: scroll;
+  width: 100%;
 }
 
+.smallboxbody::-webkit-scrollbar {
+  display: none;
+}
 .smallbox {
   min-width: 21rem;
   width: 21rem;
   height: 15rem;
   background-color: rgb(0, 0, 0);
-  margin: 1rem;
-  margin-top: 0;
+  margin-top: 0rem;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -100,9 +102,10 @@ import QuoteButton from './QuoteButton.vue'
   border: 1px solid blue;
   border-width: 0.1px;
   animation: slideInFromRight 1s ease-out;
-  animation-delay: 5s;
+  animation-delay: 1s;
   opacity: 0;
   animation-fill-mode: forwards;
+  margin-left: 3px;
 }
 .smallbox:hover {
   border: 1px solid white;
@@ -132,9 +135,6 @@ import QuoteButton from './QuoteButton.vue'
   color: white;
 }
 
-.cover::-webkit-scrollbar {
-  display: none;
-}
 .smallboxdescription {
   color: white;
   padding: 5px;
@@ -146,13 +146,13 @@ import QuoteButton from './QuoteButton.vue'
   -webkit-text-fill-color: transparent;
   font-size: 2rem;
   font-weight: bold;
-  border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-left: 1rem;
   animation: fadeIn 3s ease-in;
   animation-fill-mode: forwards;
   animation-delay: 5s;
   opacity: 0;
+  padding: 1px;
 }
 @keyframes slideInFromRight {
   from {

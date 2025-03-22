@@ -8,7 +8,6 @@ import background2 from '@/assets/img/backgroundtwo.jpg'
 import BottomFooter from '@/components/BottomFooter.vue'
 import FirstStage from '@/components/FirstStage.vue'
 import FreeApp from '@/components/FreeApp.vue'
-import leftDisplay from '@/components/LeftDisplay.vue'
 import SmallBox from '@/components/SmallBox.vue'
 import { computed, onMounted, ref } from 'vue'
 import VueCookies from 'vue-cookies'
@@ -20,7 +19,6 @@ const welcomeText = ref('')
 const showElements = ref(true)
 const inputText = ref('')
 const userLocation = ref({ latitude: null, longitude: null })
-const isSmallScreen = ref(false)
 
 const updateTime = () => {
   const now = new Date()
@@ -63,15 +61,6 @@ const checkAndSetCookie = () => {
   }
 }
 
-const checkScreenSize = () => {
-  if (window.innerWidth < 768) {
-    isSmallScreen.value = true
-    setTimeout(() => {
-      window.location.href = 'https://portfolio.mutalibb.xyz'
-    }, 3000) // Redirect after 3 seconds
-  }
-}
-
 onMounted(() => {
   updateTime()
   setInterval(updateTime, 1000) // Update time every second
@@ -80,7 +69,6 @@ onMounted(() => {
   }, 5000)
   updateLocation()
   checkAndSetCookie()
-  checkScreenSize()
 })
 
 const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
@@ -99,7 +87,6 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
 
   <div v-if="!showElements" class="bodybackground" :style="{ backgroundImage }">
     <div class="mainbox">
-      <leftDisplay />
       <div class="welcometext">{{ welcomeText }} {{ inputText }}</div>
       <div class="location" v-if="userLocation.latitude && userLocation.longitude">
         from {{ userLocation.latitude }}, {{ userLocation.longitude }}
@@ -107,10 +94,9 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
       <div class="currenttime">
         {{ currentTime }}
       </div>
-      <SmallBox />
-      <FreeApp />
-      <BottomFooter />
     </div>
+    <SmallBox />
+    <FreeApp />
     <div class="secondrow">
       <div class="bigbox">
         <div class="bigboxtext">Mentorship program</div>
@@ -138,9 +124,9 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
         </div>
         <a class="request" href="mailto:temitopking@icloud.com" target="_blank">Request to join</a>
       </div>
-      <div>
-        <router-link to="/games">
-          <div class="smallbox">
+      <div class="bigboxplain">
+        <router-link to="/games" class="smallbox">
+          <div>
             <div class="smallboxtext">Games</div>
             <div class="innertext">play games while waiting</div>
           </div>
@@ -157,10 +143,7 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
         </div>
       </div>
     </div>
-  </div>
-
-  <div v-if="isSmallScreen" class="small-screen-message">
-    This is designed for large screens. Redirecting you to the portfolio...
+    <BottomFooter />
   </div>
 </template>
 
@@ -170,21 +153,33 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   padding: 0;
   box-sizing: border-box;
 }
+
+.bodybackground {
+  background-size: cover;
+  background-position: center top 30%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  animation: moveBackground 7s linear infinite;
+  position: relative;
+}
+
+.mainbox {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
 .smallbox {
-  width: 95%;
-  padding: 10px;
-  height: 16.5rem;
+  width: 100%;
   background-color: rgb(0, 0, 0);
-  margin: 1rem;
-  margin-top: 0;
   align-items: center;
   justify-content: center;
   display: flex;
+  align-self: baseline;
   flex-direction: column;
   align-items: center;
   animation: fadeIn 3s ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 7s;
+  animation-delay: 3s;
   opacity: 0;
   box-shadow: 1px 1px 1px 1px white;
 }
@@ -202,22 +197,22 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
 }
 
 .secondrow {
-  margin: 6rem 0rem;
-  padding: 15px;
+  margin: 3rem 0rem;
+  padding: 5px;
   display: flex;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.9);
+  flex-wrap: wrap;
+  justify-content: center;
   overflow: hidden;
   width: 100%;
+  align-items: center;
 }
 
 .bigbox {
   min-width: 21rem;
-  width: 75%;
+  width: 45%;
   height: 34rem;
   background-color: rgb(0, 0, 0);
   margin: 1rem 0.5rem;
-  margin-top: 0;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -225,13 +220,32 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   align-items: center;
   animation: fadeIn 3s ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 7s;
+  animation-delay: 3s;
   opacity: 0;
   text-align: center;
   box-shadow: 1px 1px 1px 1px white;
   padding: 1px;
 }
-
+.bigboxplain {
+  min-width: 21rem;
+  width: 45%;
+  height: 34rem;
+  margin: 1rem 0.5rem;
+  margin-top: 0;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  animation: fadeIn 3s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  opacity: 0;
+  text-align: center;
+  padding: 1px;
+  justify-content: space-around;
+  align-items: first baseline;
+}
 .list {
   padding: 18px;
   font-size: 1rem;
@@ -272,25 +286,6 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   font-weight: 900;
   padding: 5px;
 }
-.bodybackground {
-  background-size: cover;
-  background-position: center top 30%;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  animation: moveBackground 7s linear infinite;
-  position: relative;
-  overflow: auto;
-}
-.mainbox {
-  background-color: rgba(0, 0, 0, 0.9);
-  position: relative;
-  width: 100%;
-  height: 47rem;
-  z-index: 200;
-  overflow: none;
-}
 
 .welcometext {
   background: linear-gradient(45deg, white, blue);
@@ -303,7 +298,7 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   text-align: center;
   margin: auto;
   animation: slideInFromRight 1s ease-out;
-  animation-delay: 5s;
+  animation-delay: 1s;
   opacity: 0;
   animation-fill-mode: forwards;
 }

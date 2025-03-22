@@ -64,18 +64,22 @@ import rokonote from '@/assets/img/rokonote.png'
 
 <style scoped>
 .cover {
-  position: absolute;
-  width: 100%;
-  overflow-x: scroll;
-  top: 29rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 2rem 0;
+  padding: 2px;
+  padding-bottom: 10px;
 }
 
-.cover::-webkit-scrollbar {
-  display: none;
-}
 .freeapp {
   display: flex;
   align-items: center;
+  margin-right: 30px;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.freeapp::-webkit-scrollbar {
+  display: none;
 }
 
 .freeappsmallbox {
@@ -83,7 +87,7 @@ import rokonote from '@/assets/img/rokonote.png'
   width: 21rem;
   height: 13rem;
   background-color: rgb(0, 0, 0);
-  margin: 1rem;
+
   margin-top: 0;
   align-items: center;
   justify-content: center;
@@ -92,8 +96,9 @@ import rokonote from '@/assets/img/rokonote.png'
   align-items: center;
   animation: slideInFromRight 1s ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 7s;
+  animation-delay: 2s;
   opacity: 0;
+  margin-left: 5px;
 }
 
 .freeapptext {

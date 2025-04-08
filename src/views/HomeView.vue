@@ -1,13 +1,12 @@
 <script setup>
 import background5 from '@/assets/img/backgroundfive.jpg'
-import background1 from '@/assets/img/backgroundone.jpg'
 import background6 from '@/assets/img/backgroundsix.jpg'
 import background3 from '@/assets/img/backgroundthree.jpg'
 import background2 from '@/assets/img/backgroundtwo.jpg'
 
 import { computed, onMounted, ref } from 'vue'
 
-const images = [background1, background2, background3, background5, background6]
+const images = [background2, background3, background5, background6]
 const currentIndex = ref(0)
 
 onMounted(() => {
@@ -126,9 +125,18 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   margin-left: auto;
   font-size: 14px;
 }
+.header div {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.39);
+  padding: 5px;
+}
 .portfoliolink {
   text-decoration: none;
-  color: blue;
+  color: black;
+  font-weight: 600;
 }
 .introprofile {
   display: flex;
@@ -139,27 +147,24 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   text-align: center;
   line-height: 44px;
   margin-top: 19px;
-  color: red;
+  color: linear-gradient(45deg, blue, black);
   background: linear-gradient(45deg, blue, black);
   background-clip: text;
   background-size: 100%;
   background-position: 0 0;
   background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-align: center;
   padding: 15px;
 }
-.introprofile h1 {
-  color: red;
-}
+
 h1 {
-  color: black;
+  color: linear-gradient(90deg, blue, black);
   font-size: 35px;
   font-weight: bold;
 }
 .introtext {
-  font-size: 14px;
+  color: white;
+  font-size: 12px;
   width: 70%;
   text-align: center;
   margin: auto;
@@ -167,7 +172,7 @@ h1 {
   background-color: rgba(0, 0, 0, 0.404);
 }
 .portfoliobutton {
-  background-color: rgba(0, 119, 255, 0.884);
+  background-color: black;
   color: white;
   padding: 5px;
   border-radius: 8px;
@@ -176,6 +181,12 @@ h1 {
   width: 7rem;
   text-align: center;
   font-weight: 600;
+}
+.portfoliobutton:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .sectionabout {
   display: flex;
@@ -209,13 +220,13 @@ h1 {
 }
 .worklink {
   text-decoration: none;
-  color: rgba(0, 0, 255, 0.945);
+  color: black;
 }
 .workbox {
   width: 14rem;
   height: 14rem;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 255, 0.534);
+  border: 1px solid black;
   line-height: 18px;
 }
 .imagebody {
@@ -235,7 +246,6 @@ h1 {
   text-align: left;
   margin-left: 5%;
   padding: 1px 0;
-  color: linear-gradient(45deg, black, blue);
 }
 .imagetext {
   font-size: 12px;

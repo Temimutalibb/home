@@ -89,7 +89,6 @@ function output() {
 h1 {
   color: white;
   font-size: 35px;
-  text-shadow: 2px 2px 8px white;
 }
 .text-check {
   background-color: white;

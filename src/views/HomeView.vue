@@ -197,6 +197,7 @@ h1 {
   padding-bottom: 2rem;
   background-color: beige;
   align-items: center;
+  background-color: lightgray;
 }
 
 .recentwork {

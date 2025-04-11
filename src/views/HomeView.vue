@@ -33,8 +33,11 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
 
       <main>
         <div class="introprofile">
-          <h1>Hi, I'm Mutalibb</h1>
-          <h1>A Software Developer</h1>
+          <h1>
+            Hi, I'm Mutalibb <br />
+            A Software Developer
+          </h1>
+
           <p class="introtext">I build web applications and mobile apps</p>
         </div>
 

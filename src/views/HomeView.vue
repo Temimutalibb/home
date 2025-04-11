@@ -20,26 +20,28 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
 
 <template>
   <div>
-    <section class="sectionintro" :style="{ backgroundImage }">
-      <div class="header">
-        <a class="portfoliolink" href="https://portfolio.mutalibb.xyz">
+    <section class="sectionintro stripe-background" :style="{ backgroundImage }">
+      <header class="header" role="navigation">
+        <a class="portfoliolink" href="https://portfolio.mutalibb.xyz" aria-label="Go to Portfolio">
           <div>Portfolio</div>
         </a>
 
-        <a class="portfoliolink" href="#recentwork">
+        <a class="portfoliolink" href="#recentwork" aria-label="Go to Recent Work">
           <div>Other Works</div>
         </a>
-      </div>
+      </header>
 
-      <div class="introprofile">
-        <h1>Hi, I'm Mutalibb</h1>
-        <h1>A Software DEVELOPER</h1>
-        <p class="introtext">I build web applications and mobile apps</p>
-      </div>
+      <main>
+        <div class="introprofile">
+          <h1>Hi, I'm Mutalibb</h1>
+          <h1>A Software Developer</h1>
+          <p class="introtext">I build web applications and mobile apps</p>
+        </div>
 
-      <a href="https://portfolio.mutalibb.xyz">
-        <div class="portfoliobutton">View Portfolio</div>
-      </a>
+        <a href="https://portfolio.mutalibb.xyz" aria-label="View my portfolio">
+          <div class="portfoliobutton">View Portfolio</div>
+        </a>
+      </main>
     </section>
 
     <section class="sectionabout">
@@ -57,29 +59,41 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
       <div>
         <p class="recentwork" id="recentwork">Recent Work</p>
         <div class="work">
-          <a class="worklink" href="https://clancircle.mutalibb.xyz">
+          <a
+            class="worklink"
+            href="https://clancircle.mutalibb.xyz"
+            aria-label="View Clan Circle project"
+          >
             <div class="workbox">
               <div class="imagebody">
-                <img src="@/assets/img/clancircle.png" alt="Image" class="image" />
+                <img
+                  src="@/assets/img/clancircle.png"
+                  alt="Clan Circle App Screenshot"
+                  class="image"
+                />
               </div>
               <p class="imagetitle">clan circle</p>
               <p class="imagetext">A mobile app that helps maximize profits</p>
             </div>
           </a>
 
-          <a class="worklink" href="https://blogit.mutalibb.xyz">
+          <a class="worklink" href="https://blogit.mutalibb.xyz" aria-label="View BlogIt project">
             <div class="workbox">
               <div class="imagebody">
-                <img src="@/assets/img/blogit.png" alt="Image" class="image" />
+                <img src="@/assets/img/blogit.png" alt="BlogIt App Screenshot" class="image" />
               </div>
               <p class="imagetitle">blogIt</p>
               <p class="imagetext">An Anonymouse web blog that allows you express yourself</p>
             </div>
           </a>
-          <a class="worklink" href="https://rokonote.mutalibb.xyz">
+          <a
+            class="worklink"
+            href="https://rokonote.mutalibb.xyz"
+            aria-label="View Roko Note project"
+          >
             <div class="workbox">
               <div class="imagebody">
-                <img src="@/assets/img/rokonote.png" alt="Image" class="image" />
+                <img src="@/assets/img/rokonote.png" alt="Roko Note App Screenshot" class="image" />
               </div>
               <p class="imagetitle">Roko Note</p>
               <p class="imagetext">
@@ -103,7 +117,6 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
 .stripe-background {
   background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'> <defs> <pattern id='stripes' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='rotate(45)'> <rect width='10' height='20' fill='lightgray' /><rect x='10' width='10' height='20' fill='white' /></pattern> </defs> <rect width='100%' height='100%' fill='url(%23stripes)' /> </svg>");
   background-size: auto;
-  border: 1px solid #ccc;
 }
 .sectionintro {
   background-size: cover;
@@ -147,20 +160,21 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   text-align: center;
   line-height: 44px;
   margin-top: 19px;
-  color: linear-gradient(45deg, blue, black);
-  background: linear-gradient(45deg, blue, black);
   background-clip: text;
   background-size: 100%;
   background-position: 0 0;
   background-repeat: no-repeat;
   text-align: center;
   padding: 15px;
+  background-color: rgba(0, 0, 0, 0.822);
 }
 
 h1 {
-  color: linear-gradient(90deg, blue, black);
+  color: white;
   font-size: 35px;
   font-weight: bold;
+  text-shadow: 1px white;
+  -webkit-text-stroke: 1px black;
 }
 .introtext {
   color: white;
@@ -169,7 +183,7 @@ h1 {
   text-align: center;
   margin: auto;
   font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.404);
+  background-color: rgba(0, 0, 0, 0.63);
 }
 .portfoliobutton {
   background-color: black;
@@ -195,7 +209,6 @@ h1 {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 2rem;
-  background-color: beige;
   align-items: center;
   background-color: lightgray;
 }
@@ -227,14 +240,15 @@ h1 {
   width: 14rem;
   height: 14rem;
   border-radius: 5px;
-  border: 1px solid black;
-  line-height: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  line-height: 16px;
 }
 .imagebody {
   width: 90%;
   height: 70%;
   margin: auto;
   margin-top: 5%;
+  margin-bottom: 5px;
 }
 .image {
   width: 100%;
@@ -262,6 +276,7 @@ h1 {
   max-height: 100%;
   display: block;
   font-weight: bold;
+  color: rgba(0, 0, 0, 0.753);
 }
 @keyframes slideInFromRight {
   from {

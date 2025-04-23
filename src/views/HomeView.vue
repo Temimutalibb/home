@@ -3,19 +3,28 @@ import background5 from '@/assets/img/backgroundfive.jpg'
 import background6 from '@/assets/img/backgroundsix.jpg'
 import background3 from '@/assets/img/backgroundthree.jpg'
 import background2 from '@/assets/img/backgroundtwo.jpg'
-
 import { computed, onMounted, ref } from 'vue'
 
 const images = [background2, background3, background5, background6]
 const currentIndex = ref(0)
 
+const isLargeScreen = ref(false)
+
+const checkScreenSize = () => {
+  isLargeScreen.value = window.innerWidth >= 1024
+}
+
 onMounted(() => {
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
   setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % images.length
   }, 5000)
 })
 
-const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
+const backgroundImage = computed(() =>
+  isLargeScreen.value ? '' : `url(${images[currentIndex.value]})`,
+)
 </script>
 
 <template>
@@ -51,11 +60,11 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
       <div>
         <h2 class="recentwork">About Me</h2>
         <p class="recenttext">
-          I am a Software developer with experience in creating responsive and user-friendly web
-          applications, i have worked on various projects, developing both frontend and backend
-          components. I am proficient in HTML, CSS, JavaScript, and various frameworks such as
-          Vue.js and React. I am passionate about creating efficient and scalable web applications
-          that provide a great user experience.
+          I am a Software developer with experience in creating responsive and user-friendly web and
+          mobile applications, i have worked on various projects, developing both frontend and
+          backend components. I am proficient in HTML, CSS, JavaScript, and various frameworks such
+          as Vue.js and React. I am passionate about creating efficient and scalable web
+          applications that provide a great user experience.
         </p>
       </div>
 
@@ -118,8 +127,15 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
 }
 
 .stripe-background {
-  background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'> <defs> <pattern id='stripes' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='rotate(45)'> <rect width='10' height='20' fill='lightgray' /><rect x='10' width='10' height='20' fill='white' /></pattern> </defs> <rect width='100%' height='100%' fill='url(%23stripes)' /> </svg>");
-  background-size: auto;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #ffffff 10px,
+    #ffffff 20px
+  );
+
+  background-size: cover;
 }
 .sectionintro {
   background-size: cover;
@@ -130,7 +146,7 @@ const backgroundImage = computed(() => `url(${images[currentIndex.value]})`)
   justify-content: center;
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  background-color: white;
   padding-bottom: 5rem;
 }
 .header {
@@ -328,5 +344,9 @@ h1 {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* Media query for large screens (e.g., 1024px and above) */
+@media (min-width: 1024px) {
 }
 </style>

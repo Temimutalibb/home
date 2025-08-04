@@ -384,7 +384,7 @@ h1 {
 /* Media query for large screens (e.g., 1024px and above) */
 @media (max-width: 600px) {
   .worklink {
-    width: 16rem;
+    width: 17rem;
   }
 }
 </style>

@@ -76,6 +76,7 @@ const backgroundImage = computed(() =>
             href="https://clancircle.mutalibb.xyz"
             aria-label="View Clan Circle project"
           >
+            <div class="imagetitle">clan circle</div>
             <div class="workbox">
               <div class="imagebody">
                 <img
@@ -84,34 +85,41 @@ const backgroundImage = computed(() =>
                   class="image"
                 />
               </div>
-              <p class="imagetitle">clan circle</p>
-              <p class="imagetext">A mobile app that helps maximize profits</p>
+
+              <div class="imagetext">
+                A mobile app that helps maximize profits, and earn crypto-currency by completing
+                simple task
+              </div>
             </div>
+            <div class="footnote">Mobile App</div>
           </a>
 
           <a class="worklink" href="https://blogit.mutalibb.xyz" aria-label="View BlogIt project">
+            <div class="imagetitle">blogIt</div>
             <div class="workbox">
               <div class="imagebody">
                 <img src="@/assets/img/blogit.png" alt="BlogIt App Screenshot" class="image" />
               </div>
-              <p class="imagetitle">blogIt</p>
-              <p class="imagetext">An Anonymouse web blog that allows you express yourself</p>
+              <div class="imagetext">An Anonymouse web blog that allows you express yourself</div>
             </div>
+            <div class="footnote">Desktop App</div>
           </a>
+
           <a
             class="worklink"
             href="https://rokonote.mutalibb.xyz"
             aria-label="View Roko Note project"
           >
+            <div class="imagetitle">Roko Note</div>
             <div class="workbox">
               <div class="imagebody">
                 <img src="@/assets/img/rokonote.png" alt="Roko Note App Screenshot" class="image" />
               </div>
-              <p class="imagetitle">Roko Note</p>
-              <p class="imagetext">
+              <div class="imagetext">
                 A note taking web App that allows you write down your thoughts
-              </p>
+              </div>
             </div>
+            <div class="footnote">Desktop App</div>
           </a>
         </div>
       </div>
@@ -229,7 +237,7 @@ h1 {
   padding-top: 1rem;
   padding-bottom: 2rem;
   align-items: center;
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.39);
 }
 
 .recentwork {
@@ -254,48 +262,64 @@ h1 {
 .worklink {
   text-decoration: none;
   color: black;
+  background-color: lightgray;
+  box-shadow: 1px 1px 4px 1px black;
+  width: 24rem;
+  height: 14rem;
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.worklink:hover {
+  background-color: hsla(160, 100%, 37%, 0.2);
 }
 .workbox {
-  width: 14rem;
-  height: 14rem;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.397);
-  line-height: 16px;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
 }
 .imagebody {
-  width: 90%;
-  height: 70%;
-  margin: auto;
-  margin-top: 5%;
-  margin-bottom: 5px;
+  width: 40%;
+  height: 80%;
+  padding: 0 7px;
 }
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 .imagetitle {
-  font-size: 14px;
+  font-size: 19px;
   font-weight: bold;
   text-align: left;
   margin-left: 5%;
   padding: 1px 0;
+  height: 10%;
 }
 .imagetext {
   font-size: 12px;
   text-align: left;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding: 1px 0;
+  width: 60%;
+  padding: 1px;
   overflow: hidden;
   width: 98;
   text-overflow: ellipsis;
-  white-space: nowrap;
   max-width: 100%;
   max-height: 100%;
-  display: block;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.753);
+}
+.footnote {
+  color: gray;
+  font-weight: 800;
+  height: 10%;
+  padding-bottom: 15px;
 }
 @keyframes slideInFromRight {
   from {

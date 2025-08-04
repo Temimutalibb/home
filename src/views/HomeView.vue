@@ -124,6 +124,7 @@ const backgroundImage = computed(() =>
         </div>
       </div>
     </section>
+    <div class="footer">&copy; 2023 Mutalibb</div>
   </div>
 </template>
 
@@ -263,7 +264,7 @@ h1 {
   text-decoration: none;
   color: black;
   background-color: lightgray;
-  box-shadow: 1px 1px 4px 1px black;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.658);
   width: 24rem;
   height: 14rem;
   display: flex;
@@ -321,6 +322,16 @@ h1 {
   height: 10%;
   padding-bottom: 15px;
 }
+.footer {
+  width: 100%;
+  height: 110px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 800;
+}
 @keyframes slideInFromRight {
   from {
     transform: translateX(100%);
@@ -371,6 +382,9 @@ h1 {
 }
 
 /* Media query for large screens (e.g., 1024px and above) */
-@media (min-width: 1024px) {
+@media (max-width: 600px) {
+  .worklink {
+    width: 16rem;
+  }
 }
 </style>

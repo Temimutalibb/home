@@ -105,11 +105,7 @@ const backgroundImage = computed(() =>
             <div class="footnote">Desktop App</div>
           </a>
 
-          <a
-            class="worklink"
-            href="https://rokonote.mutalibb.xyz"
-            aria-label="View Roko Note project"
-          >
+          <a class="worklink" href="https://roko.mutalibb.xyz" aria-label="View Roko Note project">
             <div class="imagetitle">Roko Note</div>
             <div class="workbox">
               <div class="imagebody">
@@ -124,7 +120,7 @@ const backgroundImage = computed(() =>
         </div>
       </div>
     </section>
-    <div class="footer">&copy; 2023 Mutalibb</div>
+    <div class="footer">&copy; 2023 <a href="https://x.com/mutalibb">Mutalibb</a></div>
   </div>
 </template>
 

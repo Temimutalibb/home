@@ -120,7 +120,7 @@ const backgroundImage = computed(() =>
         </div>
       </div>
     </section>
-    <div class="footer">&copy; 2023 <a href="https://x.com/mutalibb">Mutalibb</a></div>
+    <div class="footer">&copy; 2023 <a href="https://x.com/mutalibb"> Mutalibb</a></div>
   </div>
 </template>
 
